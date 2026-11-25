@@ -11,13 +11,16 @@ let
     domain = "gitgud.io";
     owner = "aeroshell";
     repo = "libplasma";
-    rev = "5f1811a0d9a66a33d5c927508f8bc3231923d443";
-    hash = "sha256-8SO/gIPUljbXKacfz3Ku64y7kvz+fpt49taAjUqF0hA=";
+    rev = "d514f51b73a77b15cbefb76923937af5d6a73b63";
+    hash = "sha256-q3r9AxGfvNIH5f5StT2SwrnDU+JfUaXSJCeC4U06Fhc=";
     forceFetchGit = true;
   };
-  patch-target = fetchzip {
-    url = "mirror://kde/stable/plasma/6.8.3/libplasma-6.8.3.tar.xz";
-    hash = "sha256-8SO/gIPUljbXKacfz3Ku64y7kvz+fpt49taAjUqF0hA=";
+  patch-target = fetchFromGitLab {
+      domain = "invent.kde.org";
+      owner = "plasma";
+      repo = "libplasma";
+      rev = "5f1811a0d9a66a33d5c927508f8bc3231923d443";
+      hash = "sha256-34M6cCe+/tZSx8wO6SzKJ/XlokAyo2/jMgF4xufp6hI=";
   };
 in
 kdePackages.libplasma.overrideAttrs (oldAttrs: {
